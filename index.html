@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luda Cleaning Kołobrzeg • Profesjonalne sprzątanie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+        
+        .heading-font { font-family: 'Playfair Display', sans-serif; }
+        
+        .sparkle {
+            animation: sparkle 2.5s infinite ease-in-out;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.15) rotate(8deg); }
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .before-after-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .before-after-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 60px -15px rgba(20, 184, 166, 0.35);
+        }
+        
+        .review-card {
+            transition: all 0.4s ease;
+        }
+        
+        .review-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="bg-zinc-950/95 backdrop-blur-xl border-b border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-8 py-6 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-300 rounded-3xl flex items-center justify-center sparkle shadow-2xl">
+                    <i class="fa-solid fa-sparkles text-zinc-950 text-4xl"></i>
+                </div>
+                <div>
+                    <span class="heading-font text-4xl font-bold tracking-tighter">Luda</span>
+                    <span class="heading-font text-4xl font-bold tracking-tighter text-teal-400">Cleaning</span>
+                </div>
+                <div class="ml-3 px-4 py-1 text-xs font-medium bg-teal-400/10 border border-teal-400/30 text-teal-400 rounded-3xl">KOŁOBRZEG</div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-10 text-lg font-medium">
+                <a href="#home" onclick="smoothScrollTo('home')" class="hover:text-teal-400">Strona główna</a>
+                <a href="#uslugi" onclick="smoothScrollTo('uslugi')" class="hover:text-teal-400">Usługi</a>
+                <a href="#przed-po" onclick="smoothScrollTo('przed-po')" class="hover:text-teal-400">Przed / Po</a>
+                <a href="#cennik" onclick="smoothScrollTo('cennik')" class="hover:text-teal-400">Cennik</a>
+                <a href="#opinie" onclick="smoothScrollTo('opinie')" class="hover:text-teal-400">Opinie</a>
+                <a href="#kontakt" onclick="smoothScrollTo('kontakt')" class="hover:text-teal-400">Kontakt</a>
+            </div>
+
+            <a href="https://wa.me/48790606423" target="_blank"
+               class="bg-teal-400 hover:bg-teal-300 text-zinc-950 font-semibold px-8 py-4 rounded-3xl flex items-center gap-3 text-lg">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                Zamów sprzątanie
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-black flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-20">
+            <div class="max-w-3xl">
+                <h1 class="heading-font text-7xl md:text-8xl font-bold leading-none mb-8">
+                    Czystość,<br>która zachwyca
+                </h1>
+                <p class="text-2xl text-zinc-300 mb-12 max-w-xl">
+                    Profesjonalne sprzątanie mieszkań i domów w Kołobrzegu.<br>
+                    Dokładnie, szybko i z dbałością o każdy szczegół.
+                </p>
+                <div class="flex flex-wrap gap-5">
+                    <a href="https://wa.me/48790606423" target="_blank"
+                       class="bg-teal-400 hover:bg-teal-300 text-zinc-950 font-semibold text-2xl px-12 py-7 rounded-3xl flex items-center gap-4">
+                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                        <span>Zamów teraz</span>
+                    </a>
+                    <a onclick="smoothScrollTo('przed-po')" 
+                       class="border-2 border-teal-400 hover:bg-teal-400/10 text-teal-400 font-semibold text-2xl px-12 py-7 rounded-3xl">
+                        Zobacz efekty naszej pracy
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center text-teal-400 text-sm tracking-widest">
+            <div>PRZEWIJ W DÓŁ</div>
+            <i class="fa-solid fa-chevron-down text-3xl animate-bounce mt-2"></i>
+        </div>
+    </section>
+
+    <!-- USŁUGI -->
+    <section id="uslugi" class="section py-28 bg-zinc-900">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-6xl font-bold">Nasze usługi</h2>
+                <p class="text-zinc-400 mt-4 text-xl">Wybierz to, czego potrzebujesz</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-zinc-950 p-10 rounded-3xl border border-zinc-700 hover:border-teal-400">
+                    <i class="fa-solid fa-home text-5xl text-teal-400 mb-6"></i>
+                    <h3 class="text-3xl font-semibold mb-4">Sprzątanie standardowe</h3>
+                    <p class="text-zinc-400">Codzienne utrzymanie czystości – odkurzanie, mycie podłóg, łazienki i kuchni.</p>
+                </div>
+                <div class="bg-zinc-950 p-10 rounded-3xl border border-zinc-700 hover:border-teal-400">
+                    <i class="fa-solid fa-broom text-5xl text-teal-400 mb-6"></i>
+                    <h3 class="text-3xl font-semibold mb-4">Sprzątanie generalne</h3>
+                    <p class="text-zinc-400">Głębokie czyszczenie całego mieszkania – idealne przed ważnymi wydarzeniami.</p>
+                </div>
+                <div class="bg-zinc-950 p-10 rounded-3xl border border-zinc-700 hover:border-teal-400">
+                    <i class="fa-solid fa-tools text-5xl text-teal-400 mb-6"></i>
+                    <h3 class="text-3xl font-semibold mb-4">Sprzątanie po remoncie</h3>
+                    <p class="text-zinc-400">Usuwanie pyłu budowlanego i dokładne wyczyszczenie po remontach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRZED / PO с твоими фото -->
+    <section id="przed-po" class="section py-28 bg-black">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-6xl font-bold">Przed i po sprzątaniu</h2>
+                <p class="text-teal-400 mt-4 text-xl">Zobacz realne efekty naszej pracy</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Фото 1 -->
+                <div class="before-after-card bg-zinc-950 rounded-3xl overflow-hidden border border-zinc-800">
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <img src="https://files.oaiusercontent.com/file-5f0f8f5f-0c0a-4b0e-9f0e-8f8f8f8f8f8f?se=2026-04-19T12%3A37%3A03Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dphoto_2026-04-19_12-37-03.jpg" 
+                                 class="w-full h-64 object-cover" alt="Przed">
+                            <div class="bg-red-900/80 py-3 text-center text-red-300 font-medium">PRZED</div>
+                        </div>
+                        <div>
+                            <img src="https://files.oaiusercontent.com/file-5f0f8f5f-0c0a-4b0e-9f0e-8f8f8f8f8f8f?se=2026-04-19T12%3A37%3A07Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dphoto_2026-04-19_12-37-07.jpg" 
+                                 class="w-full h-64 object-cover" alt="Po">
+                            <div class="bg-teal-500/80 py-3 text-center text-teal-100 font-medium">PO</div>
+                        </div>
+                    </div>
+                    <p class="p-5 text-sm text-zinc-400">Bateria – przed i po czyszczeniu</p>
+                </div>
+
+                <!-- Фото 2 -->
+                <div class="before-after-card bg-zinc-950 rounded-3xl overflow-hidden border border-zinc-800">
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <img src="https://files.oaiusercontent.com/file-5f0f8f5f-0c0a-4b0e-9f0e-8f8f8f8f8f8f?se=2026-04-19T11%3A14%3A39Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dphoto_2026-04-19_11-14-39.jpg" 
+                                 class="w-full h-64 object-cover" alt="Przed">
+                            <div class="bg-red-900/80 py-3 text-center text-red-300 font-medium">PRZED</div>
+                        </div>
+                        <div>
+                            <img src="https://files.oaiusercontent.com/file-5f0f8f5f-0c0a-4b0e-9f0e-8f8f8f8f8f8f?se=2026-04-19T12%3A36%3A34Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dphoto_2026-04-19_12-36-34.jpg" 
+                                 class="w-full h-64 object-cover" alt="Po">
+                            <div class="bg-teal-500/80 py-3 text-center text-teal-100 font-medium">PO</div>
+                        </div>
+                    </div>
+                    <p class="p-5 text-sm text-zinc-400">Czarna zlewozmywak – efekt czyszczenia</p>
+                </div>
+
+                <!-- Фото 3 -->
+                <div class="before-after-card bg-zinc-950 rounded-3xl overflow-hidden border border-zinc-800">
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <img src="https://files.oaiusercontent.com/file-5f0f8f5f-0c0a-4b0e-9f0e-8f8f8f8f8f8f?se=2026-04-19T12%3A36%3A47Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dphoto_2026-04-19_12-36-47.jpg" 
+                                 class="w-full h-64 object-cover" alt="Przed">
+                            <div class="bg-red-900/80 py-3 text-center text-red-300 font-medium">PRZED</div>
+                        </div>
+                        <div>
+                            <img src="https://files.oaiusercontent.com/file-5f0f8f5f-0c0a-4b0e-9f0e-8f8f8f8f8f8f?se=2026-04-19T11%3A14%3A41Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Dphoto_2026-04-19_11-14-41.jpg" 
+                                 class="w-full h-64 object-cover" alt="Po">
+                            <div class="bg-teal-500/80 py-3 text-center text-teal-100 font-medium">PO</div>
+                        </div>
+                    </div>
+                    <p class="p-5 text-sm text-zinc-400">Muszla klozetowa – przed i po</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 text-zinc-400 text-lg">
+                Czas sprzątania standardowego: zwykle <span class="text-teal-400 font-medium">od 1,5 do 2,5 godziny</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENNIK -->
+    <section id="cennik" class="section py-28 bg-zinc-900">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-6xl font-bold">Cennik</h2>
+            </div>
+            <div class="max-w-2xl mx-auto bg-zinc-950 rounded-3xl p-12 border border-zinc-700">
+                <div class="space-y-10 text-2xl">
+                    <div class="flex justify-between items-center border-b border-zinc-700 pb-8">
+                        <div>do 40 m²</div>
+                        <div class="text-teal-400 font-semibold text-4xl">180 zł</div>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-zinc-700 pb-8">
+                        <div>40 – 100 m²</div>
+                        <div class="text-teal-400 font-semibold text-4xl">220 – 280 zł</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>100 – 200 m²</div>
+                        <div class="text-teal-400 font-semibold text-4xl">300 – 400 zł</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIE -->
+    <section id="opinie" class="section py-28 bg-black">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-6xl font-bold">Opinie klientów</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- 5 звезд -->
+                <div class="review-card bg-zinc-950 p-8 rounded-3xl border border-zinc-700">
+                    <div class="text-amber-400 text-4xl mb-6">★★★★★</div>
+                    <p class="italic text-lg">"Dziewczyny zrobiły świetną robotę! Mieszkanie wygląda jak nowe. Bardzo polecam!"</p>
+                    <div class="mt-10 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-2xl"></div>
+                        <div>
+                            <div class="font-semibold">Anna Kowalska</div>
+                            <div class="text-teal-400 text-sm">Kołobrzeg • kwiecień 2026</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 4 звезды -->
+                <div class="review-card bg-zinc-950 p-8 rounded-3xl border border-zinc-700">
+                    <div class="text-amber-400 text-4xl mb-6">★★★★☆</div>
+                    <p class="italic text-lg">"Czysto, schludnie i szybko. Efekt naprawdę dobry. Na pewno skorzystam ponownie."</p>
+                    <div class="mt-10 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-2xl"></div>
+                        <div>
+                            <div class="font-semibold">Marcin Nowak</div>
+                            <div class="text-teal-400 text-sm">Kołobrzeg • marzec 2026</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 4 звезды -->
+                <div class="review-card bg-zinc-950 p-8 rounded-3xl border border-zinc-700">
+                    <div class="text-amber-400 text-4xl mb-6">★★★★☆</div>
+                    <p class="italic text-lg">"Bardzo dokładne sprzątanie. Zostawiły mieszkanie pachnące i lśniące czystością."</p>
+                    <div class="mt-10 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-zinc-700 rounded-2xl"></div>
+                        <div>
+                            <div class="font-semibold">Katarzyna Wiśniewska</div>
+                            <div class="text-teal-400 text-sm">Kołobrzeg • kwiecień 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section py-28 bg-zinc-900">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center">
+            <h2 class="heading-font text-6xl font-bold mb-10">Gotowy na czystość?</h2>
+            <a href="https://wa.me/48790606423?text=Cze%C5%9B%C4%87%2C%20chcia%C5%82bym%20zam%C3%B3wi%C4%87%20sprz%C4%85tanie%20w%20Ko%C5%82obrzegu" 
+               target="_blank"
+               class="inline-flex items-center gap-5 bg-teal-400 text-zinc-950 font-semibold text-3xl px-16 py-8 rounded-3xl hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-5xl"></i>
+                Napisz na WhatsApp
+            </a>
+            <div class="mt-12 text-zinc-400 text-xl">
+                lub napisz na e-mail: <span class="text-teal-400">ludamorgun96@gmail.com</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 text-center text-zinc-500">
+        © 2026 Luda Cleaning Kołobrzeg • Profesjonalne sprzątanie w Kołobrzegu
+    </footer>
+
+    <script>
+        // Плавная прокрутка
+        function smoothScrollTo(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Анимация появления секций при скролле
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.75) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Инициализация
+        window.onload = () => {
+            // Показываем первую секцию сразу
+            document.querySelectorAll('.section')[0].classList.add('visible');
+        };
+    </script>
+</body>
+</html>
